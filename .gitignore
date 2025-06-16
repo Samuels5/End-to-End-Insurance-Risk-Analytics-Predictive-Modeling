@@ -143,7 +143,17 @@ ehthumbs.db
 Thumbs.db
 
 # Data files (assuming DVC will be used for large data)
-data/
+# Ignore all content within data/ by default
+data/*
+
+# But DO NOT ignore .dvc files within data/
+!data/**/*.dvc
+
+# And DO NOT ignore a .gitignore file if placed directly inside data/
+!data/.gitignore
+
+# Also, DO NOT ignore the data directory itself, so Git can see inside it
+!data/
 
 # Outputs / Logs
 *.log
